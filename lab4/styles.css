@@ -1,0 +1,26 @@
+.custom-nav-bg {
+  background-color: #35a9e7;
+}
+
+/* Style the nav items to be white */
+  .navbar-nav .nav-link {
+    color: white;
+  }
+
+   .navbar-nav .nav-item {
+    margin-right: 30px;
+  }
+
+   .navbar-nav .nav-item:last-child {
+    margin-right: 0;
+  }
+
+  /* Add a vertical bar separator between nav items */
+  .navbar-nav .nav-item:not(:last-child) {
+    border-right: 1px solid white;
+  }
+
+  /* Remove the right border from the last nav item */
+  .navbar-nav .nav-item:last-child {
+    border-right: none;
+  }
