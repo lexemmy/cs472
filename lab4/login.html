@@ -79,10 +79,25 @@
               >Password</label
             >
             <input
-              placeholder="Password"
               type="password"
+              id="password"
+              name="password"
               class="form-control"
-              id="exampleInputPassword1"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{10,}$"
+              title="Password must be at least 10 characters long and contain at least one number, one lowercase letter, and one uppercase letter."
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="url" class="form-label">URL</label>
+            <input
+              type="url"
+              class="form-control"
+              id="url"
+              name="website"
+              pattern="^(http:\/\/|https:\/\/).*"
+              title="Website URL must start with 'http://' or 'https://'"
+              required
             />
           </div>
           <div class="mb-3 form-check">
