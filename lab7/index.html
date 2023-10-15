@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      // function askPassword(ok, fail) {
+      //   let password = prompt('password?', '')
+      //   if (password == 'rockstar') ok()
+      //   else fail()
+      // }
+
+      // let user = {
+      //   name: 'john',
+
+      //   loginOk() {
+      //     alert(`${this.name} logged in`)
+      //   },
+
+      //   loginFail() {
+      //     alert(`${this.name} failed to log in`)
+      //   },
+      // }
+      // askPassword(user.loginOk, user.loginFail.bind(user))
+
+      // let group = {
+      //   title: "Our Group",
+      //   students: ["John", "Pete", "Alice"],
+      //   showList: function(){
+      //     this.students.forEach(function  (student){
+      //       console.log(this.title + ": " + student);
+      //     }.bind(group))
+      //   }
+      // }
+
+      // group.showList()
+
+      function Person(l, n) {
+        this.lastName = l
+        this.firstName = n
+      }
+
+      Person.prototype.display = function(){
+        console.log(this.firstName, this.lastName)
+      }
+
+      function Employee(l, n, s){
+        Person.call(this, l, n);
+        this.salary = s;
+      }
+
+      Employee.prototype.displaySalary = function(){
+        console.log(this.salary)
+      }
+
+      Object.setPrototypeOf(Employee, Person)
+      Object.setPrototypeOf(Employee.prototype, Person.prototype)
+
+      let emp1 = new Employee("John", "Doe", 75000);
+      let emp2 = new Employee("Anna", "Smith", 15000);
+
+      emp1.displaySalary()
+      emp1.display()
+    </script>
+  </body>
+</html>
