@@ -8,24 +8,24 @@
   </head>
   <body>
     <script>
-      // function askPassword(ok, fail) {
-      //   let password = prompt('password?', '')
-      //   if (password == 'rockstar') ok()
-      //   else fail()
-      // }
+      function askPassword(ok, fail) {
+        let password = prompt('password?', '')
+        if (password == 'rockstar') ok()
+        else fail()
+      }
 
-      // let user = {
-      //   name: 'john',
+      let user = {
+        name: 'john',
 
-      //   loginOk() {
-      //     alert(`${this.name} logged in`)
-      //   },
+        loginOk() {
+          alert(`${this.name} logged in`)
+        },
 
-      //   loginFail() {
-      //     alert(`${this.name} failed to log in`)
-      //   },
-      // }
-      // askPassword(user.loginOk, user.loginFail.bind(user))
+        loginFail() {
+          alert(`${this.name} failed to log in`)
+        },
+      }
+      askPassword(user.loginOk.bind(user), user.loginFail.bind(user))
 
       // let group = {
       //   title: "Our Group",
